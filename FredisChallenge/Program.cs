@@ -1,4 +1,6 @@
 ﻿using System;
+using FredisChallenge.Entities;
+
 namespace FredisChallenge
 {
 
@@ -6,7 +8,15 @@ namespace FredisChallenge
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Ola");
+            Fredis fredis = new Fredis();
+            fredis.Begin();
+
+            fredis.Set("teste", "value");
+            fredis.Set("teste2", "value2");
+
+            fredis.Commit();
+
+            // Console.WriteLine(fredis.Get("teste"));
         }
 
     }
